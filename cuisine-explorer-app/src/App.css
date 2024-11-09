@@ -1,0 +1,51 @@
+@import './styles/base.css';
+@import './styles/variables.css';
+
+body {
+  font-family: var(--font-family); 
+}
+
+.App {
+  text-align: center;
+}
+
+.main-nav {
+  background-color: var(--nav-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-large);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-medium); 
+  margin-bottom: var(--margin-bottom); 
+}
+
+.nav-link:hover {
+  color: var(--hover-color) !important;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-small); 
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-xsmall); 
+  }
+}

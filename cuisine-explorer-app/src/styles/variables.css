@@ -1,0 +1,57 @@
+:root {
+    /* Colors */
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #e63946;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    
+    /* Text Colors */
+    --color-text-primary: #333;
+    --color-text-secondary: #555;
+    --color-text-header: #343a40;
+    --color-text-light: #666;
+    
+    /* Background Colors */
+    --color-background-primary: #f9f9f9;
+    --color-background-secondary: #f1f1f1;
+    --color-background-white: #fff;
+    --color-background-light: #f8f9fa;
+    
+    /* Border Colors */
+    --color-border: #ddd;
+    --color-border-light: #eee;
+    
+    /* Typography */
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 1rem;
+    --font-size-md: 1.25rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2rem;
+    --line-height-base: 1.6;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --container-padding: var(--spacing-md);
+    
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    
+    /* Box Shadow */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-base: 0.3s ease;
+  }
