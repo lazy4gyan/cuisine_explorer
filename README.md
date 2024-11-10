@@ -21,6 +21,7 @@ in both cuisine-explorer-app and server directories.
 6. Wishlist and Meal Planner
 7. Frequently Asked Questions
 8. Displaying the trending dishes in particular region
+9. Unit test 
 
 
 
