@@ -1,11 +1,12 @@
 import { ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import client from './apolloClient';
-import DishList from './components/DishList';
-import DishDetails from './components/DishDetails';
-import DishSuggester from './components/DishSuggester';
+import DishDetails from './components/dishDetails/DishDetails';
+import DishSuggester from './components/dishSuggester/DishSuggester';
+import DishList from './components/dishList/DishList';
 import './App.css';
-import Header from './components/Header';
+import Header from './components/header/Header';
+import ErrorPage from './components/errorPage/Error';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/" element={<DishList />} />
             <Route path="/dish/:name" element={<DishDetails />} />
             <Route path="/suggest" element={<DishSuggester />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
       </Router>

@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import "./DishSuggester.css";
-import { GET_DISHES_BY_INGREDIENTS } from "../graphql/queries";
+import { GET_DISHES_BY_INGREDIENTS } from "../../graphql/queries";
+import { INGREDIENTS_SEARCH_FAILED_MESSAGE, INGREDIENTS_SEARCH_TITLE, SUGGESTED_DISHES_BTN_TEXT, SUGGESTED_DISHES_TITLE } from "../../utils/helper";
 
 interface Dish {
   name: string;
@@ -48,7 +49,7 @@ const DishSuggester = () => {
 
   return (
     <div className="dish-suggester">
-      <h2>Find Dishes by Ingredients</h2>
+      <h2>{INGREDIENTS_SEARCH_TITLE}</h2>
 
       <div className="ingredient-selection">
         <div className="selected-ingredients">
@@ -75,12 +76,12 @@ const DishSuggester = () => {
               placeholder="Search ingredients..."
               className="ingredient-search-input"
             />
-            <button 
+            <button
               onClick={handleIngredientAdd}
               className="add-ingredient-btn"
               disabled={!searchTerm || selectedIngredients.includes(searchTerm)}
             >
-              Suggest Dishes
+              {SUGGESTED_DISHES_BTN_TEXT}
             </button>
           </div>
         </div>
@@ -88,7 +89,7 @@ const DishSuggester = () => {
 
       {selectedIngredients.length > 0 && (
         <div className="suggested-dishes">
-          <h3>Possible Dishes with Your Ingredients</h3>
+          <h3>{SUGGESTED_DISHES_TITLE}</h3>
           {dishesLoading ? (
             <p>Finding dishes...</p>
           ) : suggestedDishesData?.getDishesByIngredients.length > 0 ? (
@@ -111,10 +112,7 @@ const DishSuggester = () => {
               ))}
             </div>
           ) : (
-            <p>
-              No dishes can be prepared with these ingredients. Try adding more
-              ingredients!
-            </p>
+            <p>{INGREDIENTS_SEARCH_FAILED_MESSAGE}</p>
           )}
         </div>
       )}

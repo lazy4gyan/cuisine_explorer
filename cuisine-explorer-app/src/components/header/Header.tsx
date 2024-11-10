@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useQuery } from "@apollo/client";
 import { Link, useNavigate } from "react-router-dom";
-import { SEARCH_DISHES } from "../graphql/queries";
+import { SEARCH_DISHES } from "../../graphql/queries";
 import "./Header.css";
+import { LOGO_TEXT, NOT_FOUND_MESSAGE } from "../../utils/helper";
 
 interface SearchResult {
   name: string;
@@ -26,7 +27,7 @@ const Header = () => {
   const groupedResults = useMemo(() => {
     if (!data?.searchDishes) return null;
 
-    return data.searchDishes.reduce((acc: any, result: SearchResult) => {
+    return data.searchDishes.reduce((acc: { [key: string]: SearchResult[] }, result: SearchResult) => {
       if (!acc[result.matchType]) {
         acc[result.matchType] = [];
       }
@@ -64,7 +65,7 @@ const Header = () => {
     <header className="main-header">
       <div className="header-content">
         <Link to="/" className="logo">
-          <h1>Indian Cuisine Explorer</h1>
+          <h1>{LOGO_TEXT}</h1>
         </Link>
 
         <div className="search-container" ref={searchRef}>
@@ -152,7 +153,7 @@ const Header = () => {
                   )}
                 </div>
               ) : (
-                <div className="search-message">No results found</div>
+                <div className="search-message">{NOT_FOUND_MESSAGE}</div>
               )}
             </div>
           )}
